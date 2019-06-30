@@ -129,7 +129,7 @@
                         Log in
                         <i class="fas fa-sign-in ml-1"></i>
                       </button>
-                      <div class="g-signin2" @data-onsuccess="onSignIn"></div>
+                      <div id="google-signin-button"></div>
                     </div>
                   </form>
                 </div>
@@ -276,9 +276,9 @@ export default {
     };
   },
   mounted() {
-    // gapi.signin2.render("google-signin-button", {
-    //   onsuccess: this.onSignIn
-    // });
+    gapi.signin2.render("google-signin-button", {
+      onsuccess: this.onSignIn
+    });
   },
   methods: {
     emptyOnSuccess() {
